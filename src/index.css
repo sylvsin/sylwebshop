@@ -17,7 +17,7 @@ select,
 button,
 textarea {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .grid-container {
@@ -151,5 +151,55 @@ footer {
 }
 
 .filter div {
+  flex: 1;
+}
+
+/* Index.css */
+.cart {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-header {
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-items img {
+  width: 5rem;
+}
+
+.cart-items li {
+  display: flex;
+}
+
+.cart-items li div {
+  padding: 0.5rem;
+}
+
+.cart-items li div:last-child {
+  flex: 1;
+}
+
+.right {
+  text-align: right;
+}
+
+.total {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ width: 100%; 
+}
+
+.total > div,
+.total > button {
   flex: 1;
 }
