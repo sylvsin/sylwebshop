@@ -14,10 +14,27 @@ class Products extends Component {
             product: null,
         };
     }
+    
 
     componentDidMount() {
         this.props.fetchProducts();
     }
+
+    addToCart = (product) => {
+        const cartItems = this.state.cartItems.slice();
+        let alreadyInCart = false;
+        cartItems.forEach(item => {
+          if(item._id === product._id) {
+            item.count++;
+            alreadyInCart = true;
+          }
+        });
+        if(!alreadyInCart) {
+          cartItems.push({...product, count: 1});
+        }
+        this.setState({cartItems});
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    };
 
     openModal = (product) => {
         this.setState({ product });
